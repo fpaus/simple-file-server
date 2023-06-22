@@ -1,5 +1,5 @@
 const express = require("express");
-
+const port = process.env.PORT || 3000;
 const files = {
 	"test1.csv": (res) => res.send(`file,text,number,hex`),
 	"test2.csv": (res) =>
@@ -108,6 +108,6 @@ app.get("/file/:name", (req, res) => {
 	}
 });
 
-app.listen(3000, () => {
-	console.log("Server running on port 3000");
+app.listen(port, "0.0.0.0", () => {
+	console.log(`Server running on port ${port}`);
 });
