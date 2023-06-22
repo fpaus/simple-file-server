@@ -8,8 +8,14 @@ const swaggerOptiosn = {
       version: '1.0.0',
       description: 'External API Information',
     },
+    servers: [
+      {
+        url: 'https://simple-file-server.vercel.app',
+        description: 'Simple Files Server',
+      },
+    ],
   },
-  apis: [path.resolve(`./docs/**/*.yaml`)],
+  apis: ['./route.js'],
 };
 
 module.exports = swaggerJsdoc(swaggerOptiosn);
